@@ -88,11 +88,11 @@
 
   <div class="container-fluid">
     <hr>
-    <h3>Productos</h3>
+    <h3>Detalle de Pedidos</h3>
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-2  py-1">
         <input type="text" class="form-control" placeholder="Orden, documento" aria-label="search"
-          aria-describedby="basic-addon1" [(ngModel)]="dataSourceParamsList.text">
+          aria-describedby="basic-addon1" [(ngModel)]="this.Pedido">
       </div>
       <div class="col-sm-12 col-md-1 col-lg-1 pt-2 ps-3">
         <label for="dateInit" class="form-label ">Inicio</label>
@@ -109,7 +109,7 @@
           aria-describedby="basic-addon1" id="dateInit" [(ngModel)]="dataSourceParamsList.dateEnd" />
       </div>
       <div class="col-sm-12 col-md-2 col-lg-2 py-1">
-        <button type="submit" class="btn w-100">Buscar</button>
+        <button type="submit" class="btn w-100" (click)="listarPedidoDetalle()">Buscar</button>
       </div>
     </div>
     <hr>
@@ -118,33 +118,36 @@
   <div class="table-responsive container-fluid">
     <table class="table table-bordered  table-sm  table-striped text-center">
       <thead>
-        <tr class="">
-          <th colspan="3">ORDEN</th>
-          <th colspan="3">TOMA DE MUESTRA</th>
-          <th colspan="3">LABORATORIO</th>
-          <th colspan="3">EQUIPO MEDICO</th>
-          <th colspan="3">VALIDACION MEDICA</th>
-        </tr>
         <tr>
-          <th>Orden</th>
-          <th>Area</th>
-          <th>Paciente</th>
-          <th>Usuario</th>
-          <th>Fecha</th>
-          <th>Estado</th>
-          <th>Usuario</th>
-          <th>Fecha</th>
-          <th>Estado</th>
-          <th>Usuario</th>
-          <th>Fecha</th>
-          <th>Estado</th>
-          <th>Usuario</th>
-          <th>Fecha</th>
-          <th>Estado</th>
+          <th>numeroPedido</th>
+          <th>fechaPedido</th>
+          <th>fechaRecepcion</th>
+          <th>fechaDespacho</th>
+          <th>fechaEntrega</th>
+          <th>sku</th>
+          <th>nombre</th>
+          <th>cantidad</th>
+          <th>precio</th>
+          <th>total</th>
+          <th>vendedor</th>
+          <th>repartidor</th>
         </tr>
       </thead>
       <tbody>
-        
+        <tr *ngFor="let pedido of dataSourcePedidoDetalle">
+          <td>{{pedido.numeroPedido}}</td>
+          <td>{{pedido.fechaPedido}}</td>
+          <td>{{pedido.fechaRecepcion}}</td>
+          <td>{{pedido.fechaDespacho}}</td>
+          <td>{{pedido.fechaEntrega}}</td>
+          <td>{{pedido.sku}}</td>
+          <td>{{pedido.nombre}}</td>
+          <td>{{pedido.cantidad}}</td>
+          <td>{{pedido.precio}}</td> 
+          <td>{{pedido.total}}</td>
+          <td>{{pedido.vendedor}}</td>
+          <td>{{pedido.repartidor}}</td>   
+        </tr>
       </tbody>
     </table>
   </div>

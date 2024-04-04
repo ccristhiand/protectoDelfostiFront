@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { LoginService } from '../../../services/login.service';
 import { Usuario } from '../../../models/seguridad/login.model';
-import { ProductoList, UsuarioList } from '../../../models/tracking/tracking.model';
+import { DetallePedidoList,ProductoList, UsuarioList } from '../../../models/tracking/tracking.model';
 
 
 @Component({
@@ -32,6 +32,7 @@ export class ListarTrackingComponent implements OnInit{
   //------Inicializando el modelo
   dataSourceUsuario: UsuarioList[] = [];
   dataSourceProducto: ProductoList[]=[];
+  dataSourcePedidoDetalle: DetallePedidoList[]=[];
   usuario: string = '';
   
   resultAddTomaMuestra:string=""
@@ -52,6 +53,7 @@ export class ListarTrackingComponent implements OnInit{
 
   Rol:string="";
   Sku:number=0;
+  Pedido:number=0;
 
   datacollecion: Datacollecion[] = [];
     
@@ -59,6 +61,7 @@ export class ListarTrackingComponent implements OnInit{
   ngOnInit(): void {
     this.listarUsuario();
     this.listarProducto();
+    this.listarPedidoDetalle()
     let token= this.loginService.SearchToken();
     this.usuario = token.usuario;
     console.log(this.dataSourceParamsList);
@@ -80,8 +83,12 @@ export class ListarTrackingComponent implements OnInit{
       console.log(this.dataSourceProducto);
     })
   }
-
-
+  listarPedidoDetalle(){
+    this._trackingService.GetPedidoDetalle(this.Pedido).subscribe( (res:any)=>{
+      this.dataSourcePedidoDetalle =res;
+      console.log(this.dataSourcePedidoDetalle);
+    })
+  }
 
 
   fechaAnterior(){

@@ -18,3 +18,18 @@ export interface ProductoList {
     tipo:string
     unidadMedida:string
 }
+
+export interface DetallePedidoList {
+    numeroPedido : number,
+    fechaPedido: Date,
+    fechaRecepcion: Date,
+    fechaDespacho:Date,
+    fechaEntrega:Date,
+    sku:number,
+    nombre:string,
+    cantidad:number
+    precio:number
+    total:number,
+    vendedor:string,
+    repartidor:string
+}

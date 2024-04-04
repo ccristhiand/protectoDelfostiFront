@@ -30,6 +30,10 @@ export class TrackingService {
     return this.http.get<ProductoList>(urls);
   }
 
+  GetPedidoDetalle(pedido?: number){
+    let urls = `${this.url}/pedido?pedido=${pedido}`;
+    return this.http.get<ProductoList>(urls);
+  }
   // GetUsuario(rol?: string){
   //   let urls = `${this.url}/user?rol=${rol}`;
   //   return this.http.get<Usuario>(urls);
