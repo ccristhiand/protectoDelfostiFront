@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+div, body, span, a, h1, h2, h3, h4, h5, h6, input, textarea { margin: 0; font-family: "Open Sans", "Cambria", "Helvetica Neue", sans-serif !important; }
+.mat-form-field, .mat-card, .mat-table, .mat-stepper-horizontal{
+  font-family: "Open Sans", "Cambria", "Helvetica Neue", sans-serif !important;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background, 
+.mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: black !important;
+}
+
+::ng-deep .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+  background-color: black !important;
+}
+
+:root {
+  --btn-bg-color1: red;
+  --btn-bg-color2: #FC7000;
+  --btn-bg-color3: #000077 no-repeat 0 0;
+  --btn-bg-color4: #CE1515;
+  --btn-bg-color5: #06CCCC;
+  --btn-bg-color6: #4D4D51;
+  --btn-bg-color7: #1367FF;
+  --btn-bg-color8: #202121;
+  --btn-bg-color9: #038387;
+
+  --text-bg-color1: #000077;
+  --text-bg-color2: #FC7000;
+  --text-bg-color3: #4D4D51;
+  --text-bg-color4: #1367FF;
+
+  --bor-bg-color1: #fff;
+  --bor-bg-color2: #002c8b7a;
+
+  --header-bg-color1: #000077;
+  --header-bg-color2: #1c0a75;
+
+  --footer-bg-color1: #000077;
+}
+
+
+.container2 {
+  background-image: url("../src/assets/login.jpg");
+  position: relative;
+  width: 100%;
+  height: 100%;        
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  background-repeat:round;
+}

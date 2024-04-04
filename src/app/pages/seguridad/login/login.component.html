@@ -1,0 +1,23 @@
+<div class="container2">
+  <form>
+
+    <div class="inputGroup inputGroup1" style="text-align: center">
+      <!-- <img src="{{logo}}" style="margin-top: -96px; width: 87px;" > -->
+    </div>  
+
+    <div class="inputGroup inputGroup1">
+      <label for="email1">Usuario</label>
+      <input type="text" #usuario name="usuario"  class="email" maxlength="256" required (keyup.enter)="focus(clave,usuario) "[(ngModel)]="model.correo"/>
+    </div>
+    <div class="inputGroup inputGroup2">
+      <label for="password">Contraseña</label>
+      <input type="password" #clave name="clave" class="password" required minlength="8" maxlength="16" (keyup.enter)="focus('',usuario,'btnlogin')"[(ngModel)]="model.password"/>
+    </div>
+
+    <div class="inputGroup inputGroup3">
+      <button type="button" (click)="login()" >Iniciar Sesión
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </button>  
+    </div>    
+  </form>
+</div>
